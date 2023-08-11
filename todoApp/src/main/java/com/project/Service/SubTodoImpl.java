@@ -3,18 +3,18 @@ package com.project.Service;
 import com.project.DAO.iInterface.SubTodoInterface;
 import com.project.Model.SubTodo;
 
-public class SubTodoImpl implements SubTodoInterface {
+public class SubTodoImpl implements SubTodoService {
+
+    private SubTodoInterface subTodoRepo;
 
     @Override
-    public SubTodoInterface get(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+    public SubTodo get(Long id) {
+        return subTodoRepo.get(id);
     }
 
     @Override
-    public SubTodoInterface getByTodo(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getByTodo'");
+    public SubTodo getByTodo(Long id) {
+        return subTodoRepo.getByTodo(id);
     }
 
     @Override
@@ -25,14 +25,12 @@ public class SubTodoImpl implements SubTodoInterface {
 
     @Override
     public void updateSub(SubTodo sub) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateSub'");
+        subTodoRepo.save(sub);
     }
 
     @Override
     public void deleteSub(SubTodo sub) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteSub'");
+        subTodoRepo.delete(sub);
     }
 
 }

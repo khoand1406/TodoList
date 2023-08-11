@@ -51,6 +51,9 @@ public class Todo {
         this.category = cate;
     }
 
+    public Todo() {
+    }
+
     /**
      * @return Long return the id
      */

@@ -1,10 +1,8 @@
-package com.project.DAO.iInterface;
-
-import org.springframework.data.jpa.repository.JpaRepository;
+package com.project.Service;
 
 import com.project.Model.SubTodo;
 
-public interface SubTodoInterface extends JpaRepository<SubTodo, Long> {
+public interface SubTodoService {
     public SubTodo get(Long id);
 
     public SubTodo getByTodo(Long id);
