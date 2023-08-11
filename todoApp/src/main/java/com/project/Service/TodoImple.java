@@ -15,12 +15,6 @@ public class TodoImple implements TodoInteface {
     }
 
     @Override
-    public Todo getTodoById(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTodoById'");
-    }
-
-    @Override
     public List<Todo> getListByCategory(int id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getListByCategory'");
@@ -48,6 +42,12 @@ public class TodoImple implements TodoInteface {
     public void deleteTodo(Todo todo) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteTodo'");
+    }
+
+    @Override
+    public List<Todo> getListByFilter(String cateId, Date date) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getListByFilter'");
     }
 
 }

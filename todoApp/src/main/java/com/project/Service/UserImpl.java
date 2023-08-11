@@ -1,6 +1,8 @@
 package com.project.Service;
 
-import com.project.Model.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class UserImpl implements UserDetailsService {
 
@@ -11,15 +13,8 @@ public class UserImpl implements UserDetailsService {
     }
 
     @Override
-    public void Signin(String username, String password) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Signin'");
-    }
-
-    @Override
-    public User getUser(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userService.loadUserByUsername(username);
     }
 
 }

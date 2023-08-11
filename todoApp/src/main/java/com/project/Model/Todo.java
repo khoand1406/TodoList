@@ -41,6 +41,16 @@ public class Todo {
     @JoinColumn(name = "CategoryID")
     private Category category;
 
+    // to insert to database
+    public Todo(User user, String title, String descript, java.sql.Date date2, boolean isDone, Category cate) {
+        this.user = user;
+        this.title = title;
+        this.description = descript;
+        this.date = date2;
+        this.isDone = isDone;
+        this.category = cate;
+    }
+
     /**
      * @return Long return the id
      */
