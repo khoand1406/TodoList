@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.project.DAO.iInterface.TodoInteface;
 import com.project.Model.Category;
 import com.project.Model.Todo;
 import com.project.Model.User;
@@ -31,6 +32,9 @@ public class TodoController {
 
     @Autowired
     private CategoryImpl cateRepo;
+
+    @Autowired
+    private TodoInteface todoImp;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showTodoByUserId(Model model, HttpSession session) {
@@ -79,8 +83,9 @@ public class TodoController {
 
     @RequestMapping(value = "/delete-todo/{id}", method = RequestMethod.GET)
     public String deleteTodo(@PathVariable("id") Long id) {
-        Todo todo = todoRepo.geTodoById(id);
+        Todo todo = todoImp.geTodo(id);
         todoRepo.deleteTodo(todo);
+        return "redirect:/listTodo";
     }
 
     @RequestMapping(value = "/update-todo", method = RequestMethod.POST)

@@ -1,11 +1,13 @@
 package com.project.Service;
 
+import java.util.List;
+
 import com.project.Model.SubTodo;
 
 public interface SubTodoService {
     public SubTodo get(Long id);
 
-    public SubTodo getByTodo(Long id);
+    public List<SubTodo> getByTodo(Long id);
 
     public void addSubTodo(SubTodo sub);
 

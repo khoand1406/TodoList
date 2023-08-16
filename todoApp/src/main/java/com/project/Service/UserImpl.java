@@ -31,4 +31,9 @@ public class UserImpl implements UserDetailsService {
     public void getNewAuthen(User user) {
         userRepo.save(user);
     }
+
+    public User findByEmail(String email) {
+        User usercheck = userRepo.findByEmail(email);
+        return usercheck;
+    }
 }

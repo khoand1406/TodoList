@@ -27,7 +27,7 @@ public class SubTodoController {
 
     @RequestMapping(value = "/todo/{id}/", method = RequestMethod.GET)
     public String getSubTodo(@PathVariable("id") Long id, Model model) {
-        Todo todo = todoRepo.findById(id);
+        Todo todo = todoRepo.geTodo(id);
         Long todoId = todo.getId();
         List<SubTodo> subs = subRepo.getByTodo(todoId);
         model.addAttribute("listSubs", subs);
@@ -56,11 +56,17 @@ public class SubTodoController {
         return "subtodo/update";
     }
 
-    @RequestMapping(value="/update/{id}",method=RequestMethod.POST){
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
 
     public String processUpdate(@PathVariable("id") Long id, @ModelAttribute("subtodo") SubTodo sub) {
         subRepo.updateSub(id, sub);
+        return "redirect:/subtodos";
     }
-}
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String deleteSubTodo(@PathVariable("id") Long id) {
+        SubTodo sub = subRepo.get(id);
+        subRepo.delete(sub);
+        return "redirect:/subtodos";
+    }
 }

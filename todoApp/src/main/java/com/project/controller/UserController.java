@@ -54,10 +54,10 @@ public class UserController {
         }
 
         if (result.hasErrors()) {
-            return "login";
+            return "register";
         }
 
         userRepo.getNewAuthen(user);
-
+        return "login";
     }
 }

@@ -1,5 +1,7 @@
 package com.project.Service;
 
+import java.util.List;
+
 import com.project.DAO.iInterface.SubTodoInterface;
 import com.project.Model.SubTodo;
 
@@ -13,7 +15,7 @@ public class SubTodoImpl implements SubTodoService {
     }
 
     @Override
-    public SubTodo getByTodo(Long id) {
+    public List<SubTodo> getByTodo(Long id) {
         return subTodoRepo.getByTodo(id);
     }
 

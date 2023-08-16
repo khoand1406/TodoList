@@ -25,4 +25,7 @@ public interface TodoInteface extends JpaRepository<Todo, Long> {
     public void deleteTodo(Todo todo);
 
     public void saveTodo(Todo todo);
+
+    @Query("Select t from Todo where t.id= :id")
+    public Todo geTodo(Long id);
 }
